@@ -51,20 +51,23 @@ function getindex(){
 		var data= result;
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
-		var container=document.getElementById("container");
-		var tmp=document.createElement("div");
-		tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;";
-		var a=document.createElement("a");
-		a.href="detail?id="+data.id
-		a.title=data.title
-		a.target=target='_self' 
-		var img=document.createElement("img");
-		img.src=data.logo
-		img.className="cover-image"
-		img.alt=data.title
-		a.appendChild(img)
-		tmp.appendChild(a)
-		container.appendChild(tmp)
+		for(var idx in data){
+			var container=document.getElementById("container");
+			var tmp=document.createElement("div");
+			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;";
+			var a=document.createElement("a");
+			a.href="detail?id="+data[idx].id
+			a.title=data[idx].title
+			a.target=target='_self' 
+			var img=document.createElement("img");
+			img.src=data[idx].logo
+			img.className="cover-image"
+			img.alt=data[idx].title
+			a.appendChild(img)
+			tmp.appendChild(a)
+			container.appendChild(tmp)
+		}
+	
 	
 
 	})
