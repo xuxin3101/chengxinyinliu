@@ -75,3 +75,33 @@ function getindex(){
 
 	})
 }
+function getdetail(){
+	var id=getpara().id
+	http.post({url:"./api/getdetail.php",data:"id="+id,timeout:1000},function(err,result){
+		var data=result
+		if(typeof data=='string')
+		data=JSON.parse(data.trim());
+		var content=document.getElementById("content");
+		var logo=document.getElementById("logo");
+		logo.src=data.logo;
+		var co=data.content.split("\n");
+		for (var idx in co) {
+			var tmp = document.createElement("div")
+			tmp.innerHTML = co[idx]
+			content.appendChild(tmp)
+		}
+	})
+
+}
+function getpara() {
+	var url = location.search
+	var theRequest = new Object();
+	if (url.indexOf("?") != -1) {
+		var str = url.substr(1);
+		strs = str.split("&");
+		for (var i = 0; i < strs.length; i++) {
+			theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		}
+	}
+	return theRequest;
+}
