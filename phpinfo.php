@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 include('connect.php');
 header("Access-Control-Allow-Origin: *");
     $data=[];
