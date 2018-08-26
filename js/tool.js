@@ -83,11 +83,13 @@ function getdetail(){
 		data=JSON.parse(data.trim());
 		var content=document.getElementById("content");
 		var logo=document.getElementById("logo");
+		var time=document.getElementById("time");
+		time.innerHTML=data.time
 		logo.src=data.logo;
 		var co=data.content.split("\n");
 		for (var idx in co) {
 			var tmp = document.createElement("div")
-			tmp.innerHTML = co[idx]
+			tmp.innerHTML = co[idx]+"<br/>"
 			content.appendChild(tmp)
 		}
 	})
