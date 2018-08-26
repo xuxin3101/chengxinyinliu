@@ -47,7 +47,7 @@ http.post = function (option, callback) {
 	this.quest(option, callback);
 };
 function getindex(){
-	http.get("../api/getindex.php",function(err,result){
+	http.get("./api/getindex.php",function(err,result){
 		var data= result;
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
