@@ -60,10 +60,13 @@ function getindex(){
 			a.title=data[idx].title
 			a.target=target='_self' 
 			var img=document.createElement("img");
+			var p=document.createElement("p");
+			p.innerHTML=data[idx].title
 			img.src=data[idx].logo
 			img.className="cover-image"
 			img.alt=data[idx].title
 			a.appendChild(img)
+			a.appendChild(p)
 			tmp.appendChild(a)
 			container.appendChild(tmp)
 		}
