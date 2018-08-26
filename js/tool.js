@@ -56,7 +56,7 @@ function getindex(){
 			var tmp=document.createElement("div");
 			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;";
 			var a=document.createElement("a");
-			a.href="detail?id="+data[idx].id
+			a.href="detail.html?id="+data[idx].id
 			a.title=data[idx].title
 			a.target=target='_self' 
 			var img=document.createElement("img");
