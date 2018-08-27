@@ -142,27 +142,41 @@ function gettuijian(){
 	})
 }
 function getpage(){
-
+var opage=getpara().id
+if(opage=undefined)
+opage=1
 	http.get("./api/getpage.php",function(err,result){
 		var data=result
 		if(typeof data=='string')
 		data=JSON.parse(data.trim())
 		var container=document.getElementById("container");
 		var page=data.shuliang/23;
-		
+
 		var div=document.createElement("div");
 		div.className="met_pager"
 		var index=document.createElement("a");
 		index.innerHTML="首页"
 		index.href="index.html"
+		var end=document.createElement("a");
+		end.innerHTML="首页"
+		end.href="index.html?page="+page
 		div.appendChild(index)
-		for(var i=0;i<=page;i++){
+		var i=opage
+		if(opage+10<=page){
+			page=opage+10
+		}
+		else{
+			page=opage
+		}
+
+		for(;i<=page;i++){
 			var a=document.createElement("a");
 			a.innerHTML=i+1
 			var tmp=i+1;
 			a.href="index.html?page="+tmp
 			div.appendChild(a)
 		}
+		div.appendChild(end)
 		container.appendChild(div)
 
 	})
