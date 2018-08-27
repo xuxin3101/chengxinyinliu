@@ -235,7 +235,6 @@ function serach(){
 			span3.className="margin-left-10"
 			var i=document. createElement("i");
 			i.className="icon wb-eye margin-right-5"
-			i.aria-hidden="true"
 			span3.appendChild(i)
 			span3.innerHTML=data[idx].cishu
 			p.appendChild(span1)
