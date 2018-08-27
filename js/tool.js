@@ -157,8 +157,8 @@ opage=1
 		var index=document.createElement("a");
 		index.innerHTML="首页"
 		index.href="index.html"
-		var end=document.createElement("a");
-		end.innerHTML="首页"
+		var endpage=document.createElement("a");
+		endpage.innerHTML="首页"
 		var end=page+1
 		end.href="index.html?page="+end
 		div.appendChild(index)
@@ -177,7 +177,7 @@ opage=1
 			a.href="index.html?page="+tmp
 			div.appendChild(a)
 		}
-		div.appendChild(end)
+		div.appendChild(endpage)
 		container.appendChild(div)
 
 	})
