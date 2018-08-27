@@ -143,7 +143,7 @@ function gettuijian(){
 }
 function getpage(){
 var opage=getpara().id
-if(opage=undefined)
+if(opage==undefined)
 opage=1
 	http.get("./api/getpage.php",function(err,result){
 		var data=result
@@ -158,7 +158,7 @@ opage=1
 		index.innerHTML="首页"
 		index.href="index.html"
 		var endpage=document.createElement("a");
-		endpage.innerHTML="首页"
+		endpage.innerHTML="尾页"
 		var end=page+1
 		end.href="index.html?page="+end
 		div.appendChild(index)
