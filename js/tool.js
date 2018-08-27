@@ -160,7 +160,7 @@ opage=1
 		var endpage=document.createElement("a");
 		endpage.innerHTML="尾页"
 		var end=page+1
-		end.href="index.html?page="+end
+		endpage.href="index.html?page="+parseint(end)
 		div.appendChild(index)
 		var i=opage
 		if(opage+10<=page+1){
