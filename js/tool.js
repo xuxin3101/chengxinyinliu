@@ -55,6 +55,8 @@ function getindex(){
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
 		var container=document.getElementById("container");
+
+
 		for(var idx in data){
 			var tmp=document.createElement("div");
 			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;margin-left:2.5rem;";
@@ -88,6 +90,11 @@ function getdetail(){
 		var content=document.getElementById("content");
 		var logo=document.getElementById("logo");
 		var time=document.getElementById("time");
+		var cishu=document.getElementById("cishu");
+		var title=document.getElementById("title");
+		document.title=data.title
+		cishu.innerHTML=data.cishu
+		title.innerHTML=data.title
 		time.innerHTML=data.time
 		logo.src=data.logo;
 		var co=data.content.split("\n");
