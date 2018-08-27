@@ -73,6 +73,7 @@ function getindex(){
 			tmp.appendChild(a)
 			container.appendChild(tmp)
 		}
+		getpage();
 	
 	
 
