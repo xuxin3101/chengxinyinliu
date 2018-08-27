@@ -210,19 +210,21 @@ function serach(){
 			div1.className="media media-lg"
 			var div2=document.createElement("div");
 			div2.className="media-left"
-			var a=document.createElement("a");
-			a.href="detail.html?id="+data[idx].id
-			a.innerHTML=data[idx].title
+			var a1=document.createElement("a");
+			a1.href="detail.html?id="+data[idx].id
 			var img=document.createElement("img");
 			img.className="media-object"
 			img.src=data[idx].logo
-			a.appendChild(img)
-			div2.appendChild(a)
+			a1.appendChild(img)
+			div2.appendChild(a1)
 			div1.appendChild(div2)
 			var div3=document.createElement("div");
 			div3.className="media-body"
 			var h4=document.createElement("h4");
 			h4.className="media-heading"
+			var a2=document.createElement("a");
+			a2.href="detail.html?id="+data[idx].id
+			a2.innerHTML=data[idx].title
 			h4.appendChild(a)
 			div3.appendChild(h4)
 			var p=document.createElement("p");
