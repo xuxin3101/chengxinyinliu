@@ -243,7 +243,7 @@ function serach(){
 			span2.innerHTML="信诚"
 			var span3=document.createElement("span");
 			span3.className="margin-left-10"
-			var i=document. createElement("i");
+			var i=document.createElement("i");
 			i.className="icon wb-eye margin-right-5"
 			span3.appendChild(i)
 			span3.innerHTML=data[idx].cishu
