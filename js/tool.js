@@ -157,6 +157,13 @@ opage=1
 		var index=document.createElement("a");
 		index.innerHTML="首页"
 		index.href="index.html"
+		if(opage!=1){
+		var back=document.createElement("a");
+		back.innerHTML="首页"
+		back.href="index.html?page="+parseInt(opage-1)
+		div.appendChild(next)
+		}
+		
 		var endpage=document.createElement("a");
 		endpage.innerHTML="尾页"
 		var end=page+1
@@ -177,6 +184,13 @@ opage=1
 			a.href="index.html?page="+tmp
 			div.appendChild(a)
 		}
+		if(opage!=end){
+			var next=document.createElement("a");
+			next.innerHTML="下一页"
+			next.href="index.html?page="+parseInt(opage+1)
+			div.appendChild(next)
+		}
+	
 		div.appendChild(endpage)
 		container.appendChild(div)
 
