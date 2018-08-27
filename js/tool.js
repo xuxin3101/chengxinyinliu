@@ -54,7 +54,7 @@ function getindex(){
 		for(var idx in data){
 			var container=document.getElementById("container");
 			var tmp=document.createElement("div");
-			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;";
+			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;margin-left:2.5rem;";
 			var a=document.createElement("a");
 			a.href="detail.html?id="+data[idx].id
 			a.title=data[idx].title
