@@ -184,7 +184,7 @@ opage=1
 			a.href="index.html?page="+tmp
 			div.appendChild(a)
 		}
-		if(opage!=end){
+		if(opage!=parseInt(end)){
 			var next=document.createElement("a");
 			next.innerHTML="下一页"
 			next.href="index.html?page="+parseInt(opage+1)
