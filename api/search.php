@@ -1,7 +1,7 @@
 <?php
 include('connect.php');
 header("Access-Control-Allow-Origin: *");
-if (empty($_POST['keyword'])) {
+if (!empty($_POST['keyword'])) {
     $data=[];
     $keyword=$_POST['keyword'];
     $sql = "select title,logo,id from jiaoben where content like '%$$keyword%';";
