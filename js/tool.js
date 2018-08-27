@@ -159,10 +159,11 @@ opage=1
 		index.href="index.html"
 		var end=document.createElement("a");
 		end.innerHTML="首页"
-		end.href="index.html?page="+page
+		var end=page+1
+		end.href="index.html?page="+end
 		div.appendChild(index)
 		var i=opage
-		if(opage+10<=page){
+		if(opage+10<=page+1){
 			page=opage+10
 		}
 		else{
