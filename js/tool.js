@@ -196,3 +196,56 @@ opage=1
 
 	})
 }
+
+function serach(){
+	var keyword=getpara().keyword
+	http.post({url:"./api/search.php",data:"keyword="+keyword,timeout:1000},function(err,result){
+		var data=result
+		if(typeof data=='string')
+		data=JSON.parse(data.trim())
+		var container=document.getElementById("container");
+		for(var idx in data){
+			var li=document.createElement("li");
+			var div1=document.createElement("div");
+			div1.className="media media-lg"
+			var div2=document.createElement("div");
+			div2.className="media-left"
+			var a=document.createElement("a");
+			a.href="";
+			var img=document.createElement("img");
+			img.className="media-object"
+			img.src="images/jiaobenlogo/qqyinyue.png"
+			a.appendChild(img)
+			div2.appendChild(a)
+			div1.appendChild(div2)
+			var div3=document.createElement("div");
+			div3.className="media-body"
+			var h4=document.createElement("h4");
+			h4.className="media-heading"
+			h4.appendChild(a)
+			div3.appendChild(h4)
+			var p=document.createElement("p");
+			p.className="info"
+			var span1=document.createElement("span");
+			span1.innerHTML=data[idx].time
+			var span2=document.createElement("span");
+			span2.className="margin-left-10"
+			span2.innerHTML="信诚"
+			var span3=document.createElement("span");
+			span3.className="margin-left-10"
+			var i=document. createElement("i");
+			i.className="icon wb-eye margin-right-5"
+			i.aria-hidden="true"
+			span3.appendChild(i)
+			span3.innerHTML=data[idx].cishu
+			p.appendChild(span1)
+			p.appendChild(span2)
+			p.appendChild(span3)
+			div3.appendChild(p)
+			div1.appendChild(div3)
+			li.appendChild(div1)
+			container.appendChild(li)
+		}
+
+	})
+}
