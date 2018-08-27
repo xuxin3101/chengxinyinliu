@@ -51,8 +51,8 @@ function getindex(){
 		var data= result;
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
+		var container=document.getElementById("container");
 		for(var idx in data){
-			var container=document.getElementById("container");
 			var tmp=document.createElement("div");
 			tmp.style="color:#f5c951;text-align:center;display:inline-block;height:31rem;width:27rem;margin-left:2.5rem;";
 			var a=document.createElement("a");
@@ -106,4 +106,31 @@ function getpara() {
 		}
 	}
 	return theRequest;
+}
+function gettuijian(){
+	http.get("./api/gettuijian.php",function(err,result){
+		var data=result
+		if(typeof data=='string')
+		data=JSON.parse(data.trim());
+		var tuijian=document.getElementById("tuijian");
+		for(var idx in data){
+			var tmp=document.createElement("div");
+			tmp.style="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10"
+			var a=document.createElement("a");
+			a.href="detail.html?id="+data[idx].id
+			a.title=data[idx].title
+			a.target=target='_self' 
+			a.className="img"
+			var img=document.createElement("img"); 
+			img.src=data[idx].logo
+			img.className="img-responsive"
+			img.style="height:250px"
+			img.alt=data[idx].title
+			a.appendChild(img)
+			tmp.appendChild(a)
+			tuijian.appendChild(tmp)
+		}
+
+
+	})
 }
