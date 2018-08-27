@@ -48,6 +48,8 @@ http.post = function (option, callback) {
 };
 function getindex(){
 	var page=getpara().page
+	if(page==undefined)
+	page=""
 	http.get("./api/getindex.php?page="+page,function(err,result){
 		var data= result;
 		if(typeof data=='string')
