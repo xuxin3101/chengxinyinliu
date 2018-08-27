@@ -225,7 +225,7 @@ function serach(){
 			var a2=document.createElement("a");
 			a2.href="detail.html?id="+data[idx].id
 			a2.innerHTML=data[idx].title
-			h4.appendChild(a)
+			h4.appendChild(a2)
 			div3.appendChild(h4)
 			var p=document.createElement("p");
 			p.className="info"
