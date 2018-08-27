@@ -172,8 +172,8 @@ opage=1
 
 		for(;i<=page;i++){
 			var a=document.createElement("a");
-			a.innerHTML=i+1
-			var tmp=i+1;
+			a.innerHTML=i
+			var tmp=i;
 			a.href="index.html?page="+tmp
 			div.appendChild(a)
 		}
