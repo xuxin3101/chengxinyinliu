@@ -119,15 +119,17 @@ function gettuijian(){
 			var a=document.createElement("a");
 			a.href="detail.html?id="+data[idx].id
 			a.title=data[idx].title
-			a.innerHTML=data[idx].title
 			a.target=target='_self' 
 			a.className="img"
 			var img=document.createElement("img"); 
+			var p=document.createElement("p");
+			p.innerHTML=data[idx].title
 			img.src=data[idx].logo
 			img.className="img-responsive"
 			img.style="height:250px"
 			img.alt=data[idx].title
 			a.appendChild(img)
+			a.appendChild(p)
 			tmp.appendChild(a)
 			tuijian.appendChild(tmp)
 		}
