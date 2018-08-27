@@ -119,6 +119,7 @@ function gettuijian(){
 			var a=document.createElement("a");
 			a.href="detail.html?id="+data[idx].id
 			a.title=data[idx].title
+			a.innerHTML=data[idx].title
 			a.target=target='_self' 
 			a.className="img"
 			var img=document.createElement("img"); 
