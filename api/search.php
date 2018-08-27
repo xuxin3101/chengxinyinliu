@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 if (!empty($_POST['keyword'])) {
     $data=[];
     $keyword=$_POST['keyword'];
-    $sql = "select title,logo,id from jiaoben where content like '%$keyword%';";
+    $sql = "select title,logo,id from jiaoben where content like '%$keyword%' or title like '%$keyword%';";
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
