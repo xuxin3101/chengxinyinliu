@@ -47,7 +47,8 @@ http.post = function (option, callback) {
 	this.quest(option, callback);
 };
 function getindex(){
-	http.get("./api/getindex.php",function(err,result){
+	var page=getpara().page
+	http.get("./api/getindex.php?page"=+page,function(err,result){
 		var data= result;
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
@@ -134,6 +135,32 @@ function gettuijian(){
 			tuijian.appendChild(tmp)
 		}
 
+
+	})
+}
+function getpage(){
+
+	http.get("./api/getpage.php",function(err,result){
+		var data=result
+		if(typeof data=='string')
+		data=JSON.parse(data.trim())
+		var container=document.getElementById("container");
+		var page=data.shuliang/23;
+		
+		var div=document.createElement("div");
+		div.className="met_pager"
+		var index=document.createElement("a");
+		index.innerHTML="首页"
+		index.href="index.html"
+		div.appendChild(index)
+		for(var i=0;i<=page;i++){
+			var a=document.createElement("a");
+			a.innerHTML=i+1
+			var tmp=i+1;
+			a.href="index.html?page="+tmp
+			div.appendChild(a)
+		}
+		container.appendChild(div)
 
 	})
 }
