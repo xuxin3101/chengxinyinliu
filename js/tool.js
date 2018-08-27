@@ -214,7 +214,7 @@ function serach(){
 			a.href="";
 			var img=document.createElement("img");
 			img.className="media-object"
-			img.src="images/jiaobenlogo/qqyinyue.png"
+			img.src=data[idx].logo
 			a.appendChild(img)
 			div2.appendChild(a)
 			div1.appendChild(div2)
