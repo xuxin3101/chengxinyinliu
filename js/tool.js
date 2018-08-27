@@ -211,7 +211,8 @@ function serach(){
 			var div2=document.createElement("div");
 			div2.className="media-left"
 			var a=document.createElement("a");
-			a.href="";
+			a.href="detail.html?id="+data[idx].id
+			a.innerHTML=data[idx].title
 			var img=document.createElement("img");
 			img.className="media-object"
 			img.src=data[idx].logo
