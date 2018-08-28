@@ -272,6 +272,8 @@ function serach() {
 }
 function searchdemo(){
 	var id = getpara().id
+	var shanng=document.getElementById("shang")
+	var xia=document.getElementById("xia")
 	http.post({
 		url: "./api/getdemodetail.php",
 		data: "id=" + id,
@@ -291,5 +293,43 @@ function searchdemo(){
 		video.src=data.link
 		
 	})
+	var tmpid=id+1
+		http.post({
+		url: "./api/getdemodetail.php",
+		data: "id=" + tmpid,
+		timeout: 1000
+	}, function (err, result) {
+		var data = result
+		if (typeof data == 'string')
+			data = JSON.parse(data.trim());
+		if(data==null){
+				xia.innerHTML="下一篇：没有了"
+		}else{
+			xia.innerHTML="下一篇："+data.title
+		}
+		
+	})
+	var shangid=id-1
+	if(shangid==0)
+		shang.innerHTML="上一篇：没有了"
+	else{
+		http.post({
+		url: "./api/getdemodetail.php",
+		data: "id=" + shangid,
+		timeout: 1000
+	}, function (err, result) {
+		var data = result
+		if (typeof data == 'string')
+			data = JSON.parse(data.trim());
+		if(data==null){
+				shang.innerHTML="上一篇：没有了"
+		}else{
+			shang.innerHTML="上一篇："+data.title
+		}
+		
+	})
+	}
+
+	
 
 }
