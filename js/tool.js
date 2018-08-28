@@ -278,7 +278,7 @@ function getdemopage() {
 		var data = result
 		if (typeof data == 'string')
 			data = JSON.parse(data.trim())
-		var container = document.getElementById("container");
+		var container = document.getElementById("page");
 		var page = data.shuliang / 10;
 
 		var div = document.createElement("div");
