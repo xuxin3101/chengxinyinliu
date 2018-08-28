@@ -18,7 +18,7 @@ $page=$_GET['page'];
 $start=($page-1)*10;
 $end=$start+9;
 $data=[];
-$sql = "select title,logo,id from demo order by id  limit $start,$end;";
+$sql = "select title,logo,id,time,count from demo order by id  limit $start,$end;";
 $res = $mysqli->query($sql);
 if (!$res) {
     die("sql error:\n" . $mysqli->error);
