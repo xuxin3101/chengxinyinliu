@@ -3,7 +3,7 @@ include('connect.php');
 header("Access-Control-Allow-Origin: *");
 if (empty($_GET['page'])) {
     $data=[];
-    $sql = "select title,logo,id,time,cishu from demo order by id  limit 0,9;";
+    $sql = "select title,logo,id,time,count from demo order by id  limit 0,9;";
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
