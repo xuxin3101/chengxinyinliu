@@ -133,7 +133,8 @@ var id = getpara().id
 			tmp.src = item[1]
 			if (item[0] == 'video') {
 				tmp.height = "500"
-				tmp.width = "500"
+        tmp.width = "500"
+        tmp.controls="true"
 			}
 			container.appendChild(tmp)
 		}
