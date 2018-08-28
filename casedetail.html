@@ -128,7 +128,7 @@ var id = getpara().id
 		content = content.split(";")
 		for (var idx in content) {
 			var item = content[idx];
-			item = item.split(":")
+			item = item.split("=")
 			var tmp = document.createElement(item[0])
 			tmp.src = item[1]
 			if (item[0] == 'video') {
