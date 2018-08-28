@@ -298,7 +298,6 @@ function getcase(){
 			p1.className="des"
 			p1.innerHTML="引流，从这里开始..."
 			div3.appendChild(p1)
-			<p class=""> <span></span> <span class=""></span> <span class=""><i class="icon wb-eye margin-right-5" aria-hidden="true"></i>2571</span> </p>
 			var p2=document.createElement("p");
 			p2.className="info"
 			var span1=document.createElement("span")
