@@ -270,3 +270,26 @@ function serach() {
 
 	})
 }
+function searchdemo(){
+	var id = getpara().id
+	http.post({
+		url: "./api/getdemodetail.php",
+		data: "id=" + id,
+		timeout: 1000
+	}, function (err, result) {
+		var data = result
+		if (typeof data == 'string')
+			data = JSON.parse(data.trim());
+		var time = document.getElementById("time");
+		var cishu = document.getElementById("cishu");
+		var title = document.getElementById("title");
+		var video = document.getElementById("video");
+		document.title = data.title
+		cishu.innerHTML = data.count
+		title.innerHTML = data.title
+		time.innerHTML = data.time
+		video.src=data.link
+		
+	})
+
+}

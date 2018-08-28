@@ -2,7 +2,7 @@
 include('connect.php');
 header("Access-Control-Allow-Origin: *");
 
-    $sql = "select count(*) shuliang from case";
+    $sql = "select count(*) shuliang from demo";
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
