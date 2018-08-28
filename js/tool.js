@@ -270,7 +270,6 @@ function serach() {
 
 	})
 }
-
 function getdemo() {
 	var page = getpara().page
 	if (page == undefined)
