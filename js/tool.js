@@ -276,7 +276,7 @@ function searchdemo() {
 	var shanng = document.getElementById("shang")
 	var xia = document.getElementById("xia")
 	http.post({
-		url: "./api/getcasedetail.php",
+		url: "./api/getdemodetail.php",
 		data: "id=" + id,
 		timeout: 1000
 	}, function (err, result) {
@@ -286,28 +286,17 @@ function searchdemo() {
 		var time = document.getElementById("time");
 		var cishu = document.getElementById("cishu");
 		var title = document.getElementById("title");
-		var container = document.getElementById("container");
+		var video = document.getElementById("video");
 		document.title = data.title
 		cishu.innerHTML = data.count
 		title.innerHTML = data.title
 		time.innerHTML = data.time
-		var content = data.content
-		content = content.split(";")
-		for (var idx in content) {
-			var item = content[idx];
-			item = item.split(":")
-			var tmp = document.createElement(item[0])
-			tmp.src = item[1]
-			if (item[0] == 'video') {
-				tmp.height = "500"
-				tmp.width = "500"
-			}
-			container.appendChild(tmp)
-		}
+		video.src = data.link
+
 	})
 	var tmpid = id + 1
 	http.post({
-		url: "./api/getcasedetail.php",
+		url: "./api/getdemodetail.php",
 		data: "id=" + tmpid,
 		timeout: 1000
 	}, function (err, result) {
@@ -326,7 +315,7 @@ function searchdemo() {
 		shang.innerHTML = "上一篇：没有了"
 	else {
 		http.post({
-			url: "./api/getcasedetail.php",
+			url: "./api/getdemodetail.php",
 			data: "id=" + shangid,
 			timeout: 1000
 		}, function (err, result) {
@@ -341,8 +330,6 @@ function searchdemo() {
 
 		})
 	}
-
-
 
 }
 

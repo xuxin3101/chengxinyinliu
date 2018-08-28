@@ -103,7 +103,9 @@
 <button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"> <i class="icon wb-chevron-up" aria-hidden="true"></i> </button>
 <script src="skin/js/58aef1327c6bc52f.js"></script>
 <script>function searchcase() {
-	var id = getpara().id
+
+
+var id = getpara().id
 	var shanng = document.getElementById("shang")
 	var xia = document.getElementById("xia")
 	http.post({
@@ -117,12 +119,24 @@
 		var time = document.getElementById("time");
 		var cishu = document.getElementById("cishu");
 		var title = document.getElementById("title");
-		var video = document.getElementById("video");
+		var container = document.getElementById("container");
 		document.title = data.title
 		cishu.innerHTML = data.count
 		title.innerHTML = data.title
 		time.innerHTML = data.time
-
+		var content = data.content
+		content = content.split(";")
+		for (var idx in content) {
+			var item = content[idx];
+			item = item.split(":")
+			var tmp = document.createElement(item[0])
+			tmp.src = item[1]
+			if (item[0] == 'video') {
+				tmp.height = "500"
+				tmp.width = "500"
+			}
+			container.appendChild(tmp)
+		}
 	})
 	var tmpid = id + 1
 	http.post({
