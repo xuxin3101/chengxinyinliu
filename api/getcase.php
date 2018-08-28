@@ -3,7 +3,7 @@ include('connect.php');
 header("Access-Control-Allow-Origin: *");
 if (empty($_GET['page'])) {
     $data=[];
-    $sql = "select title,logo,id,time,count from case order by id  limit 0,9;";
+    $sql = "select title,logo,id,time,count from `case` order by id  limit 0,9;";
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
@@ -18,7 +18,7 @@ $page=$_GET['page'];
 $start=($page-1)*10;
 $end=$start+9;
 $data=[];
-$sql = "select title,logo,id,time,count from case order by id  limit $start,$end;";
+$sql = "select title,logo,id,time,count from `case` order by id  limit $start,$end;";
 $res = $mysqli->query($sql);
 if (!$res) {
     die("sql error:\n" . $mysqli->error);
