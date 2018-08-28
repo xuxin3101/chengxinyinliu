@@ -258,11 +258,11 @@ function serach(){
 
 	})
 }
-function getcase(){
+function getdemo(){
 	var page=getpara().page
 	if(page==undefined)
 	page=""
-	http.get("./api/getcase.php?page="+page,function(err,result){
+	http.get("./api/getdemo.php?page="+page,function(err,result){
 		var data= result;
 		if(typeof data=='string')
 		data=JSON.parse(data.trim());
@@ -321,7 +321,7 @@ function getcase(){
 		}
 	})
 }
-function getcasepage(){
+function getdemodetail(){
 
-	
+
 }
