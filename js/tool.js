@@ -332,33 +332,5 @@ function searchdemo() {
 	}
 
 }
-function getskilldetail() {
-	var id = getpara().id
-	http.post({
-		url: "./api/getskilldetail.php",
-		data: "id=" + id,
-		timeout: 1000
-	}, function (err, result) {
-		var data = result
-		if (typeof data == 'string')
-			data = JSON.parse(data.trim());
-		var content = document.getElementById("content");
-		var logo = document.getElementById("logo");
-		var time = document.getElementById("time");
-		var cishu = document.getElementById("cishu");
-		var title = document.getElementById("title");
-		document.title = data.title
-		cishu.innerHTML = data.cishu
-		title.innerHTML = data.title
-		time.innerHTML = data.time
-		logo.src = data.logo;
-		var co = data.content.split("\n");
-		for (var idx in co) {
-			var tmp = document.createElement("div")
-			tmp.innerHTML = co[idx] + "<br/>"
-			content.appendChild(tmp)
-		}
-	})
 
-}
 
