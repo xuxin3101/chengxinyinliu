@@ -216,7 +216,7 @@
         alert('内容不能为空');
         return
       }
-      http.post({url:"./api/insert.php",data:"name="+name+"&phone="+tel+"&mail="+mail+"&content="+content},function(err,result){
+      http.post({url:"./api/insert.php",data:"name="+name.value+"&phone="+tel.value+"&mail="+mail.value+"&content="+content.value},function(err,result){
         if(result==0)
         alert("发送成功");
         else
