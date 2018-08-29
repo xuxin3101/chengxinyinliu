@@ -15,7 +15,7 @@ if (!empty($_POST['name'])) {
 }
 else
 {
-    echo '1';
+    echo '0';
 }
 
 $mysqli->close();

@@ -217,7 +217,7 @@
         return
       }
       http.post({url:"./api/insert.php",data:"name="+name.value+"&phone="+tel.value+"&mail="+mail.value+"&content="+content.value},function(err,result){
-        if(result==0)
+        if(result==1)
         alert("发送成功");
         else
         alert("发送失败")
