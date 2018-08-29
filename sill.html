@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="generator" content=""  data-variable=""/>
+<title>引流技巧_信诚脚本圈</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="skin/css/10ada1bfe8283ab1.css">
+<!--[if lt IE 10]>
+<script src="/skin/js/media.match.min.js"></script>
+<script src="/skin/js/respond.min.js"></script>
+<script src="/skin/js/classlist.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/tool.js"></script>
+</head>
+<body class="met-navfixed">
+<nav class="navbar navbar-default met-nav navbar-fixed-top" role="navigation">
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle hamburger hamburger-close collapsed"
+						data-target="#example-navbar-default-collapse" data-toggle="collapse"> <span class="sr-only"></span> <span class="hamburger-bar"></span> </button>
+        <a href="index.html" class="navbar-brand navbar-logo vertical-align" title="信诚脚本圈">
+        <div class="vertical-align-middle"><img src="skin/images/logo.gif" alt="信诚脚本圈" title="信诚脚本圈" /></div>
+        </a> <span class="navbar-green1" ></span> </div>
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="example-navbar-default-collapse">
+        <ul class="nav navbar-nav navbar-right navlist">
+        
+           
+          <li class="margin-right-35"><a href="index.html"  title="首页" class="link ">首页</a></li><li class="margin-right-35"><a href="vip.html"  title="加入脚本圈" class="link ">加入脚本圈</a></li><li class="margin-right-35"><a href="name.html"  title="脚本名录" class="link ">脚本名录</a></li><li class="margin-right-35"><a href="demo.html"  title="操作演示" class="link ">操作演示</a></li><li class="margin-right-35"><a href="case.html"  title="加粉案例" class="link active">加粉案例</a></li><li class="margin-right-35"><a href="skill.html"  title="引流技巧" class="link ">引流技巧</a></li><li class="margin-right-35"><a href="make.html"  title="脚本定制" class="link ">脚本定制</a></li>
+          <li class="search"> <a href="javascript:void(0);" title="搜索"> <i class="fa fa-search font-size-15"></i> </a>
+            <form  name="formsearch" class="search-box" action="search.html">
+              <input class="text" name="keyword" type="text" >
+              <input class="submit" type="submit">
+              <i class="fa fa-search font-size-15"></i>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="met-banner banner-pc350 banner-max300 banner-mobile200"><a data-original="skin/images/1469799272.jpg" data-originals="skin/images/1469799272.jpg" title=""  target='_self'></a> </div>
+<section class="met-news animsition">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 met-news-body">
+        <div class="row">
+          <div class="met-news-list">
+            <ul class="met-page-ajax" id="container">
+              
+            </ul>
+            <div id="page">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <div class="met-news-bar">
+            <form  name="formsearch" action="search.html">
+              <div class="form-group">
+                <div class="input-search">
+                  <button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i></button>
+                  <input type="text" class="form-control" name="keyword" placeholder="Search">
+                </div>
+              </div>
+            </form>
+            <div class="recommend news-list-md">
+<span style="color: red;size:20px;"> 信诚QQ/微信：583031810</span>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container text-center">
+    <p>
+<p><span style="color: red;">本站全部脚本只允许用在正规项目引流，禁止用于非法用途，非法项目者禁止加入，加入后发现非法使用一律踢出！</span> </p>
+    <p>Copyright &copy;  xcjbq.com  粤ICP备16115510号-2 </p>
+
+    </p>
+    <div class="powered_by_metinfo"> Powered by <a href="http://www.xcjbq.com" target="_blank" title="信诚脚本圈">信诚脚本圈</a></div>
+  </div>
+</footer>
+<button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"> <i class="icon wb-chevron-up" aria-hidden="true"></i> </button>
+<script src="skin/js/58aef1327c6bc52f.js"></script>
+<script>function getskill() {
+	var page = getpara().page
+	if (page == undefined)
+		page = ""
+	http.get("./api/getskill.php?page=" + page, function (err, result) {
+		var data = result;
+		if (typeof data == 'string')
+			data = JSON.parse(data.trim());
+		var container = document.getElementById("container");
+		for (var idx in data) {
+			var li = document.createElement("li")
+			var div1 = document.createElement("div");
+			div1.className = "media media-lg"
+			var a = document.createElement("a");
+			a.href = "casedetail.html?id=" + data[idx].id
+			a.title = data[idx].title
+			a.target = target = '_self'
+			var img = document.createElement("img");
+			img.src = data[idx].logo
+			img.className = "media-object"
+			img.alt = data[idx].title
+			a.appendChild(img)
+			var div2 = document.createElement("div");
+			div2.className = "media-left"
+			div2.appendChild(a)
+			div1.appendChild(div2)
+			var div3 = document.createElement("div");
+			div3.className = "media-body"
+			var h4 = document.createElement("h4");
+			var a1 = document.createElement("a");
+			a1.href = "skilldetail.html?id=" + data[idx].id
+			a1.title = data[idx].title
+			a1.target = target = '_self'
+			a1.innerHTML = data[idx].title
+			h4.appendChild(a1)
+			div3.appendChild(h4)
+			var p1 = document.createElement("p");
+			p1.className = "des"
+			p1.innerHTML = "引流，从这里开始..."
+			div3.appendChild(p1)
+			var p2 = document.createElement("p");
+			p2.className = "info"
+			var span1 = document.createElement("span")
+			span1.innerHTML = data[idx].time
+			p2.appendChild(span1)
+			var span2 = document.createElement("span")
+			span2.className = "margin-left-10"
+			span2.innerHTML = "信诚"
+			p2.appendChild(span2)
+			var span3 = document.createElement("span")
+			span3.className = "margin-left-10"
+			var i = document.createElement("i");
+			i.className = "icon wb-eye margin-right-5"
+			i.innerHTML = data[idx].count
+			span3.appendChild(i)
+			p2.appendChild(span3)
+			div3.appendChild(p2)
+			div1.appendChild(div3)
+			li.appendChild(div1)
+			container.appendChild(li)
+    }
+    getcasepage();
+	})
+}
+function getskillpage() {
+	var opage = getpara().id
+	if (opage == undefined)
+		opage = 1
+	http.get("./api/getskillpage.php", function (err, result) {
+		var data = result
+		if (typeof data == 'string')
+			data = JSON.parse(data.trim())
+		var container = document.getElementById("page");
+		var page = data.shuliang / 10;
+
+		var div = document.createElement("div");
+		div.className = "met_pager"
+		var index = document.createElement("a");
+		index.innerHTML = "首页"
+		index.href = "skill.html"
+		if (opage != 1) {
+			var back = document.createElement("a");
+			back.innerHTML = "首页"
+			back.href = "skill.html?page=" + parseInt(opage - 1)
+			div.appendChild(next)
+		}
+
+		var endpage = document.createElement("a");
+		endpage.innerHTML = "尾页"
+		var end = page + 1
+		endpage.href = "skill.html?page=" + parseInt(end)
+		div.appendChild(index)
+		var i = opage
+		if (opage + 10 <= page + 1) {
+			page = opage + 10
+		} else {
+			page = opage
+		}
+
+		for (; i <= page; i++) {
+			var a = document.createElement("a");
+			a.innerHTML = i
+			var tmp = i;
+			a.href = "skill.html?page=" + tmp
+			div.appendChild(a)
+		}
+		if (opage != parseInt(end)) {
+			var next = document.createElement("a");
+			next.innerHTML = "下一页"
+			next.href = "skill.html?page=" + parseInt(opage + 1)
+			div.appendChild(next)
+		}
+
+		div.appendChild(endpage)
+		container.appendChild(div)
+
+	})
+}
+
+getskill();
+
+</script>
+</body>
+</html>
