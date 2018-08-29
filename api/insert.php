@@ -7,6 +7,7 @@ if (empty($_POST['name'])) {
     $mail=$_POST['mail'];
     $content=$_POST['content'];
     $sql = "insert into msg(id,name,phone,mail,content) values(null,'$name','$phone','$mail','$content')";
+    echo $sql;
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
