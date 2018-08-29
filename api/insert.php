@@ -11,7 +11,7 @@ if (empty($_POST['name'])) {
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
     }
-    echo $res;
+    echo $sql;
 }
 
 $mysqli->close();
