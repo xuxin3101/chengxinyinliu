@@ -142,28 +142,28 @@
         </div>
         <div class="col-lg-1 col-md-1"></div>
         <div class="col-lg-4 col-md-5 col-sm-6 message-cut" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
-          <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+       
             <input type="hidden" name="action" value="post" />
             <input type="hidden" name="diyid" value="1" />
             <input type="hidden" name="do" value="2" />
             <div class='input'>
-              <input name='name' placeholder='姓名' type='text' size='30' class='input-text' />
+              <input name='name' placeholder='姓名' type='text' size='30' class='input-text' id="name" />
             </div>
             <div class='input'>
-              <input name='tel' placeholder='电话' type='text' size='30' class='input-text' />
+              <input name='tel' placeholder='电话' type='text' size='30' class='input-text' id="tel"/>
             </div>
             <div class='input'>
-              <input name='email' placeholder='邮箱' type='text' size='30' class='input-text' />
+              <input name='email' placeholder='邮箱' type='text' size='30' class='input-text' id="mail"/>
             </div>
             <div class='input'>
-              <textarea name='nr' placeholder='内容' class='textarea-text' cols='50' rows='5'></textarea>
+              <textarea name='nr' placeholder='内容' class='textarea-text' cols='50' rows='5' id="content"></textarea>
             </div>
             <div class='submint'>
               <input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;nr,text" />
               <input type="hidden" name="dede_fieldshash" value="9554d680330972433e736dd6e1cb5cdc" />
-              <input type='submit' name='submit' value='提交信息' class='submit button orange'>
+              <input type='submit' name='submit' value='提交信息' class='submit button orange' id="btn" onclick="tijiao();">
             </div>
-          </form>
+
         </div>
         <div class="col-lg-1"></div>
       </div>
@@ -191,6 +191,42 @@
   <script src="skin/js/58aef1327c6bc52f.js"></script>
   <script>
     getindex();
+    function tijiao(){
+      var name=document.getElementById("name")
+      var tel=document.getElementById("tel")
+      var mail=document.getElementById("mail")
+      var content=document.getElementById("content")
+      if(name.value.length==0)
+      {
+        alert('姓名不能为空');
+        return
+      }
+      if(tel.value.length==0)
+      {
+        alert('电话不能为空');
+        return
+      }
+      if(mail.value.length==0)
+      {
+        alert('邮箱不能为空');
+        return
+      }
+      if(content.value.length==0)
+      {
+        alert('内容不能为空');
+        return
+      }
+      http.post({url:"./api/insert.php",data:"name="+name+"&phone="+tel+"&mail="+mail+"&content="+content},function(err,result){
+        if(result==0)
+        alert("发送成功");
+        else
+        alert("发送失败")
+
+      })
+      
+
+    }
+
   </script>
 </body>
 
