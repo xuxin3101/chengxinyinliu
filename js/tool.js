@@ -187,9 +187,9 @@ function getpage() {
 		div.appendChild(index)
 		var i = opage
 		if (opage + 10 <= page + 1) {
-			page = opage + 10
+			page = opage 
 		} else {
-			page = opage
+			page = opage+10
 		}
 
 		for (; i <= page; i++) {
