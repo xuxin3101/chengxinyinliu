@@ -186,7 +186,7 @@ function getpage() {
 		endpage.href = "index.html?page=" + parseInt(end)
 		div.appendChild(index)
 		var i = opage
-		if (opage + 10 <= page + 1) {
+		if ((opage + 10) <= (page + 1)) {
 			page = opage 
 		} else {
 			page = opage+10
