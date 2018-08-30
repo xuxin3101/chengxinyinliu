@@ -166,7 +166,7 @@ function getpage() {
 		if (typeof data == 'string')
 			data = JSON.parse(data.trim())
 		var container = document.getElementById("container");
-		var page = data.shuliang / 23;
+		var page = parseInt(data.shuliang / 23);
 
 		var div = document.createElement("div");
 		div.className = "met_pager"
