@@ -189,7 +189,7 @@ function getpage() {
 		if ((opage + 10) <= (page + 1)) {
 			page = opage+10
 		} else {
-			page = endpage
+			page = end
 		}
 
 		for (; i <= page; i++) {
