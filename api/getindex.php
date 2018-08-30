@@ -3,7 +3,7 @@ include('connect.php');
 header("Access-Control-Allow-Origin: *");
 if (empty($_GET['page'])) {
     $data=[];
-    $sql = "select title,logo,id from jiaoben order by id  limit 0,22;";
+    $sql = "select title,logo,id from jiaoben order by id  limit 0,23;";
     $res = $mysqli->query($sql);
     if (!$res) {
         die("sql error:\n" . $mysqli->error);
@@ -16,7 +16,7 @@ if (empty($_GET['page'])) {
 else{
 $page=$_GET['page'];
 $start=($page-1)*23;
-$end=$start+22;
+$end=$start+23;
 $data=[];
 $sql = "select title,logo,id from jiaoben order by id  limit $start,$end;";
 $res = $mysqli->query($sql);
