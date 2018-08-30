@@ -17,6 +17,7 @@ else{
 $page=$_GET['page'];
 $start=($page-1)*23;
 $end=$start+23;
+echo $end;
 $data=[];
 $sql = "select title,logo,id from jiaoben order by id  limit $start,$end;";
 $res = $mysqli->query($sql);
